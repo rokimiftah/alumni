@@ -138,7 +138,7 @@ USE_TZ = True
 
 """ Static CDN """
 
-STATIC_HOST = os.environ.get("CDN_STATIC", "")
+STATIC_HOST = os.getenv("CDN_STATIC", "")
 
 STATIC_URL = STATIC_HOST + "/static/"
 

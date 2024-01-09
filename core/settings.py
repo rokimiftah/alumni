@@ -136,11 +136,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# Static path for collectstatic in production
+""" Static CDN """
 
-STATIC_URL = "static/"
+STATIC_HOST = os.environ.get("CDN_STATIC", "")
 
-STATIC_ROOT = BASE_DIR / "static/"
+STATIC_URL = STATIC_HOST + "/static/"
 
 
 # Default primary key field type

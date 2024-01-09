@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+  Update Alumni
+{% endblock title %}
+{% block content %}
+  <h3 class="text-center m-4">Update Alumni</h3>
+  {% if success %}
+    <div class="alert alert-success" role="alert">
+      Alumni records successfully updated.
+      <a href="{% url "index" %}" class="alert-link">Back to List.</a>
+    </div>
+  {% else %}
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="card bg-light mb-3">
+          <div class="card-header">
+            <i class="fa-solid fa-pen-to-square fa-lg"></i>
+            Update Alumni Records
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">Update</button>
+              <a href="{% url "index" %}" class="btn btn-secondary">Cancel</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock content %}

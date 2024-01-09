@@ -137,16 +137,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 # Static path for collectstatic in production
-ENVIRONMENT= os.getenv("ENV")
 
-STATIC_HOST = os.getenv("CDN_STATIC", "")
+STATIC_URL = "static/"
 
-STATIC_ROOT = BASE_DIR / "static"
-
-if ENVIRONMENT == "development":
-    STATIC_URL = "static/"
-else:
-    STATIC_URL = STATIC_HOST + "/static/"
+STATIC_ROOT = BASE_DIR / "static/"
 
 
 # Default primary key field type

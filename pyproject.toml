@@ -1,0 +1,27 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.poetry]
+authors = ["Roki Miftah Kamaludin"]
+description = "Information on Student Alumni"
+license = "MIT"
+name = "alumni"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+dj-database-url = "^2.1.0"
+django = "^4.2.9"
+django-cors-headers = "^4.3.1"
+gunicorn = "^21.2.0"
+psycopg = { extras = ["binary"], version = "^3.1.17" }
+python = "^3.9.18"
+python-dotenv = "^1.0.0"
+setproctitle = "^1.3.3"
+whitenoise = { extras = ["brotli"], version = "^6.6.0" }
+
+[tool.poetry.group.dev.dependencies]
+django-browser-reload = "^1.12.1"
+djlint = "^1.34.1"
+toml-sort = "^0.23.1"
